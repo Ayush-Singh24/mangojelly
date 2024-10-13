@@ -68,23 +68,35 @@ export default function ChatInterface() {
       <Typography variant="h6" gutterBottom>
         Online Users
       </Typography>
-      <Box sx={{ mb: 2, display: "flex", flexDirection: "column", gap: 2 }}>
-        <Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>
+      <Box
+        sx={{
+          mb: 2,
+          display: "flex",
+          flexDirection: "column",
+          gap: 2,
+          "&>*": {
+            display: "flex",
+            alignItems: "center",
+            gap: 2,
+            p: 0.5,
+            borderRadius: 2,
+          },
+          "&>*:hover": { bgcolor: "grey.200", cursor: "pointer" },
+        }}
+      >
+        <Box>
           <Avatar sx={{ bgcolor: "primary.main" }}>
             {currentUser.name[0].toUpperCase()}
           </Avatar>
           <Typography>{currentUser.name}</Typography>
         </Box>
-        <Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>
+        <Box>
           <Avatar sx={{ bgcolor: "secondary.main" }}>
             {currentUser.name[0].toUpperCase()}
           </Avatar>
           <Typography>Bot</Typography>
         </Box>
       </Box>
-      <Typography variant="body2" color="text.secondary">
-        {`${new Date().toLocaleString()}`}
-      </Typography>
     </Box>
   );
 
@@ -92,7 +104,9 @@ export default function ChatInterface() {
     <Box sx={{ display: "flex", height: "100vh", width: "100vw" }}>
       <AppBar
         position="fixed"
-        sx={{ zIndex: (theme) => theme.zIndex.drawer + 1 }}
+        sx={{
+          zIndex: (theme) => theme.zIndex.drawer + 1,
+        }}
       >
         <Toolbar>
           {isSmallScreen && (

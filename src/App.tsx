@@ -7,7 +7,7 @@ import ChatInterface from "./components/ChatInterface";
 const theme = createTheme({
   palette: {
     primary: {
-      main: "#1976d2",
+      main: "#F4BB44",
     },
     secondary: {
       main: "#dc004e",
