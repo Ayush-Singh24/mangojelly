@@ -92,7 +92,7 @@ export default function ChatInterface() {
         </Box>
         <Box>
           <Avatar sx={{ bgcolor: "secondary.main" }}>
-            {currentUser.name[0].toUpperCase()}
+            {"Bot"[0].toUpperCase()}
           </Avatar>
           <Typography>Bot</Typography>
         </Box>
