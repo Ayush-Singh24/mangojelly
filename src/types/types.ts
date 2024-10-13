@@ -7,6 +7,7 @@ export interface Message {
   id: number;
   text: string;
   user: User;
+  timeStamp: number;
 }
 
 export interface ChatState {

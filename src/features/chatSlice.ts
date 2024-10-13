@@ -17,7 +17,12 @@ export const sendMessage = createAsyncThunk<
 
   //Simulate API call
   await new Promise((resolve) => setTimeout(resolve, 500));
-  return { id: Date.now(), text: message, user: currentUser };
+  return {
+    id: Date.now(),
+    text: message,
+    user: currentUser,
+    timeStamp: Date.now(),
+  };
 });
 
 export const receiveMessage = createAsyncThunk<Message>(
@@ -29,6 +34,7 @@ export const receiveMessage = createAsyncThunk<Message>(
       id: Date.now(),
       text: "This is a mock received message",
       user: { id: 2, name: "Bot" },
+      timeStamp: Date.now(),
     };
   },
 );
