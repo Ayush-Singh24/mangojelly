@@ -35,7 +35,6 @@ export default function ChatInterface() {
     theme.breakpoints.down("sm"),
   );
 
-
   // Function to handle send button
   const handleSend = async () => {
     if (input.trim()) {
@@ -49,7 +48,6 @@ export default function ChatInterface() {
 
   // Reference to a div element at the end of messages for auto scrolling
   const messagesEndRef = useRef<HTMLDivElement>(null);
-
 
   // Function to handle auto scroll
   const scrollToBottom = () => {
@@ -69,6 +67,7 @@ export default function ChatInterface() {
         width: drawerWidth,
         p: 2,
         flexDirection: "column",
+        overflow: "hidden",
       }}
     >
       <Typography variant="h6" gutterBottom>
@@ -131,9 +130,11 @@ export default function ChatInterface() {
           sx={{
             width: drawerWidth,
             flexShrink: 0,
+            overflow: "hidden",
             [`& .MuiDrawer-paper`]: {
               width: drawerWidth,
               boxSizing: "border-box",
+              overflow: "hidden",
             },
           }}
         >
@@ -152,6 +153,7 @@ export default function ChatInterface() {
             [`& .MuiDrawer-paper`]: {
               width: drawerWidth,
               boxSizing: "border-box",
+              overflow: "hidden",
             },
           }}
         >
