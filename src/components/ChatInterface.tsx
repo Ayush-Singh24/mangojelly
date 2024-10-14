@@ -30,10 +30,13 @@ export default function ChatInterface() {
     (state) => state.chat,
   );
 
+  // Media Query breakpoint for smaller screens
   const isSmallScreen = useMediaQuery((theme: Theme) =>
     theme.breakpoints.down("sm"),
   );
 
+
+  // Function to handle send button
   const handleSend = async () => {
     if (input.trim()) {
       console.log(messages);
@@ -44,8 +47,11 @@ export default function ChatInterface() {
     }
   };
 
+  // Reference to a div element at the end of messages for auto scrolling
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
+
+  // Function to handle auto scroll
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
   };
